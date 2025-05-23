@@ -1,13 +1,9 @@
 package uz.pdp.lionestatebot.models.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 import uz.pdp.lionestatebot.models.enums.BotState;
 
 import java.time.LocalDateTime;
