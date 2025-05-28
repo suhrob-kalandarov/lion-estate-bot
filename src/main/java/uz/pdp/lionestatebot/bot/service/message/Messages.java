@@ -1,30 +1,149 @@
 package uz.pdp.lionestatebot.bot.service.message;
 
 import uz.pdp.lionestatebot.bot.models.enums.entity.Language;
-
 import java.util.Arrays;
 import java.util.Optional;
 
 public enum Messages implements LocalizedMessage {
-    // HOME
+    /// BASE
+    BACK_BTN("🔙 Orqaga", "🔙 Назад", "🔙 Back", "🔙 返回"),
+    SHARE_CONTACT_BTN(
+            "📱 Kontakt ulashish",
+            "📱 Поделиться контактом",
+            "📱 Share contact",
+            "📱 分享联系方式"
+    ),
+    SHARE_LOCATION_BTN(
+            "📍 Joylashuvni ulashish",
+            "📍 Поделиться локацией",
+            "📍 Share location",
+            "📍 分享位置"
+    ),
+
+    /// HOME
     RENT_BTN("🏠 Arenda", "🏠 Аренда", "🏠 Rent", "🏠 租房"),
     SALE_BTN("🏠 Sotuv", "🏠 Продажа", "🏠 Sale", "🏠 出售"),
     ABOUT_US_BTN("ℹ️ Biz haqimizda", "ℹ️ О нас", "ℹ️ About us", "ℹ️ 关于我们"),
     ADD_AD_BTN("📢 E'lon qo'shish", "📢 Добавить объявление", "📢 Add ad", "📢 添加广告"),
     LANGUAGE_BTN("🌐 Tilni o'zgartirish", "🌐 Сменить язык", "🌐 Change language", "🌐 更改语言"),
-    ADD_AD_MSG("📢 E'lon qo'shish uchun @Lion_estate761 bilan bog'laning", "📢 Свяжитесь с @Lion_estate761", "📢 Contact @Lion_estate761", "📢 联系 @Lion_estate761"),
-    ABOUT_US_MSG("ℹ️ Biz haqimizda ma'lumot", "ℹ️ Информация о нас", "ℹ️ About us information", "ℹ️ 关于我们的信息"),
+    ADD_AD_MSG(
+            "📢 E'lon qo'shish uchun @Lion_estate761 bilan bog'laning",
+            "📢 Свяжитесь с @Lion_estate761",
+            "📢 Contact @Lion_estate761",
+            "📢 联系 @Lion_estate761"
+    ),
+    ABOUT_US_MSG(
+            """
+                    🏡 LION ESTATE – SIZNING ISHONCHLI UY AGENTLIGINGIZ!
+        
+                    📍 Toshkent shahri bo‘yicha
+                    ✅ 15 000+ qonuniy uylar bazasi!
+                    📂 Har bir uy — hujjatlari to‘liq va tayyor!
+        
+                    👨‍⚖️ Yuristlarimiz sizga yordam beradi — sotib olish, ijaraga olish yoki hujjatlashtirishda to‘liq yuridik qo‘llab-quvvatlash kafolatlanadi.
+        
+                    🔐 Ishonch, sifat va qulaylik — barchasi LION ESTATE bilan!
+        
+                    📞 Biz bilan bog‘laning va orzuyingizdagi uyni toping!
+            """,
+            """
+                    🏡 LION ESTATE – ВАШ НАДЕЖНЫЙ АГЕНТ ПО НЕДВИЖИМОСТИ!
+        
+                    📍 По городу Ташкент
+                    ✅ База данных из более 15 000 законных домов!
+                    📂 Каждый дом — с полными и готовыми документами!
+        
+                    👨‍⚖️ Наши юристы помогут вам на всех этапах — от покупки до аренды и оформления документов.
+        
+                    🔐 Доверие, качество и удобство — всё с LION ESTATE!
+        
+                    📞 Свяжитесь с нами и найдите дом своей мечты!
+            """,
+            """
+                    🏡 LION ESTATE – YOUR TRUSTED REAL ESTATE AGENCY!
+        
+                    📍 Covering the city of Tashkent
+                    ✅ Database of 15,000+ legal properties!
+                    📂 Each house comes with complete and verified documents!
+        
+                    👨‍⚖️ Our lawyers will assist you — from buying and renting to full legal documentation support.
+        
+                    🔐 Trust, quality, and convenience — all with LION ESTATE!
+        
+                    📞 Contact us and find your dream home!
+            """,
+            """
+                    🏡 LION ESTATE – 您值得信赖的房地产代理！
+        
+                    📍 涵盖塔什干市
+                    ✅ 超过 15,000 套合法房源数据库！
+                    📂 每套房屋都配有完整的合法文件！
+        
+                    👨‍⚖️ 我们的律师将为您提供全程协助——购买、租赁或文件处理。
+        
+                    🔐 信任、质量和便利——尽在 LION ESTATE！
+        
+                    📞 联系我们，寻找您梦想中的家！
+            """
+    ),
 
-    // RENT
+    /// RENT
     APARTMENT_BTN("🏠 Kvartira", "🏠 Квартира", "🏠 Apartment", "🏠 公寓"),
     OFFICE_BTN("🏢 Ofis", "🏢 Офис", "🏢 Office", "🏢 办公室"),
+    NON_RES_BTN("🏢 No turar joy", "🏢 Нежилое помещение", "🏢 Non-residential", "🏢 非住宅"),
     APARTMENT_MSG("Kvartira ijarasi bo‘limi", "Раздел аренды квартир", "Apartment rental section", "公寓租赁部分"),
     OFFICE_MSG("Ofis ijarasi bo‘limi", "Раздел аренды офисов", "Office rental section", "办公室租赁部分"),
 
-    // PROFILE
+    /// PROFILE
     FAMILY_BTN("👨‍👩‍👧 Oilaviy", "👨‍👩‍👧 Семейный", "👨‍👩‍👧 Family", "👨‍👩‍👧 家庭"),
     STUDENT_BTN("🎓 Talaba", "🎓 Студент", "🎓 Student", "🎓 学生"),
-    SINGLE_BTN("👤 Yolg‘iz", "👤 Одинокий", "👤 Single", "👤 单身");
+    SINGLE_BTN("👤 Yolg‘iz", "👤 Одинокий", "👤 Single", "👤 单身"),
+
+    /// CITIZENSHIP
+    LOCAL_BTN("🇺🇿 O'zbekiston fuqarosi", "🇺🇿 Гражданин Узбекистана", "🇺🇿 Local (Uzbek citizen)", "🇺🇿 乌兹别克斯坦公民"),
+    FOREIGNER_BTN("🌍 Chet el fuqarosi", "🌍 Иностранец", "🌍 Foreigner", "🌍 外国人"),
+
+    /// RENOVATION
+    EURO_RE_BTN("🛠 Euro remont", "🛠 Евро ремонт", "🛠 Euro renovation", "🛠 欧式装修"),
+    MINIMALISM_RE_BTN("🎨 Minimalizm remont", "🎨 Минимализм ремонт", "🎨 Minimalism renovation", "🎨 极简装修"),
+    HIGHTECH_RE_BTN("🔧 Haytek remont", "🔧 Хайтек ремонт", "🔧 High-tech renovation", "🔧 高科技装修"),
+    SIMPLE_RE_BTN("🏡 Oddiy uy", "🏡 Простой дом", "🏡 Simple house", "🏡 普通住宅"),
+
+    /// HOME
+    HOME_INFO_MSG(
+            """
+                🏡 Uy-joy haqida ma'lumotlar:
+                📍 Rayon: %s
+                📐 Maydon: %s
+                💵 Narx: %s USD
+        
+                ✅ Ma'lumotlar qabul qilindi, rahmat! 🥳
+            """,
+            """
+                🏡 Информация о недвижимости:
+                📍 Район: %s
+                📐 Площадь: %s
+                💵 Цена: %s USD
+        
+                ✅ Данные приняты, спасибо! 🥳
+            """,
+            """
+                🏡 Property information:
+                📍 District: %s
+                📐 Area: %s
+                💵 Price: %s USD
+        
+                ✅ Information received, thank you! 🥳
+            """,
+            """
+                🏡 房产信息：
+                📍 地区：%s
+                📐 面积：%s
+                💵 价格：%s 美元
+        
+                ✅ 信息已接收，谢谢！🥳
+            """
+    );
 
     private final String uz;
     private final String ru;
