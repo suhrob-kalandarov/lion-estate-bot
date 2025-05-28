@@ -9,6 +9,7 @@ import uz.pdp.lionestatebot.bot.models.base.Auditable;
 import uz.pdp.lionestatebot.bot.models.entity.ext.Favorite;
 import uz.pdp.lionestatebot.bot.models.entity.ext.Rating;
 import uz.pdp.lionestatebot.bot.models.entity.ext.RequestProperty;
+import uz.pdp.lionestatebot.bot.models.enums.SessionState;
 import uz.pdp.lionestatebot.bot.models.enums.entity.Citizenship;
 import uz.pdp.lionestatebot.bot.models.enums.entity.Language;
 import uz.pdp.lionestatebot.bot.models.enums.entity.ProfileType;
@@ -24,6 +25,10 @@ import java.util.List;
 public class Session extends Auditable {
     @Id
     protected Long userId;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private SessionState state;
 
     private Boolean _active;
 
