@@ -1,7 +1,10 @@
 package uz.pdp.lionestatebot.admin.dto;
 
+import lombok.Value;
+
+@Value
 public class AdminResponse {
-    private Long id;
-    private String fullName;
-    private String username;
+    Long id;
+    String fullName;
+    String username;
 }

@@ -1,6 +1,9 @@
 package uz.pdp.lionestatebot.admin.dto;
 
+import lombok.Value;
+
+@Value
 public class AdminRequest {
-    private String username;
-    private String password;
+    String username;
+    String password;
 }

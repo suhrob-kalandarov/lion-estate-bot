@@ -9,6 +9,7 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import uz.pdp.lionestatebot.bot.models.base.BaseEntity;
 import uz.pdp.lionestatebot.bot.models.entity.Property;
+import uz.pdp.lionestatebot.bot.models.entity.Session;
 import uz.pdp.lionestatebot.bot.models.entity.User;
 
 @Getter
@@ -20,7 +21,7 @@ import uz.pdp.lionestatebot.bot.models.entity.User;
 public class Favorite extends BaseEntity {
 
     @ManyToOne
-    private User user;
+    private Session session;
 
     @ManyToOne
     private Property property;

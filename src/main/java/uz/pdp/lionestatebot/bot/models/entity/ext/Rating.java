@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import uz.pdp.lionestatebot.bot.models.base.BaseEntity;
+import uz.pdp.lionestatebot.bot.models.entity.Session;
 import uz.pdp.lionestatebot.bot.models.entity.User;
 
 @Getter
@@ -20,5 +21,5 @@ public class Rating extends BaseEntity {
     private int stars; // 1–5
 
     @ManyToOne
-    private User user;
+    private Session session;
 }

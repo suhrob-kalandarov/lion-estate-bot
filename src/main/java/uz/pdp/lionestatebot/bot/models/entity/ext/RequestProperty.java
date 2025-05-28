@@ -6,7 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import uz.pdp.lionestatebot.bot.models.base.BaseEntity;
-import uz.pdp.lionestatebot.bot.models.enums.PropertyCategory;
+import uz.pdp.lionestatebot.bot.models.entity.Session;
+import uz.pdp.lionestatebot.bot.models.enums.entity.PropertyCategory;
 import uz.pdp.lionestatebot.bot.models.entity.User;
 
 import java.math.BigDecimal;
@@ -33,8 +34,7 @@ public class RequestProperty extends BaseEntity {
     private PropertyCategory category;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    private Session session;
 
     /*@ManyToOne
     private Admin createdBy;*/
