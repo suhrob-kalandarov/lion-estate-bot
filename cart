@@ -1,0 +1,232 @@
+---
+
+Lion Estate Bot – To‘liq Ish Rejasi (2025 Yakuniy)
+
+
+---
+
+1. START bosqichi:
+
+Bot ishga tushganda foydalanuvchi til tanlaydi: 🇺🇿 Uzbek | 🇷🇺 Русский | 🇬🇧 English | 🇨🇳 中文
+
+
+
+---
+
+2. Til tanlangach:
+
+Tanlangan tilga mos “Biz haqimizda” xabari chiqadi:
+
+
+> "Lion Estate – Toshkent shahrida 15 000+ qonuniy uylar bazasiga ega agentlik. Hujjatlashtirishda yuristlarimiz yordam beradi."
+
+
+
+
+---
+
+3. Asosiy menyu (bo‘limlar):
+
+🏡 Arenda
+
+🏠 Sotuv
+
+📤 E’lon qo‘shish
+
+🕵️ AI yordamida uy topish
+
+📍 Lokatsiya asosida qidiruv
+
+🧾 Biz haqimizda (batafsil)
+
+
+
+---
+
+4. Agar foydalanuvchi Arenda bo‘limini tanlasa:
+
+4.1. Arenda turlari:
+
+🏢 Kvartira
+
+🏬 Ofis
+
+🏭 Noturar joy (Ne’jeloy)
+
+
+4.2. Kvartira bo‘limida:
+
+Kim yashaydi? (Oila / Student / Yolg‘iz)
+
+Fuqarolik: O‘zbekiston / Chet ellik
+
+Rayon tanlash (Tugmalar orqali)
+
+Remont tanlash: Evro / Minimalizm / Haytek / Oddiy uy
+
+Narx tanlash: $350 – $2500
+
+Uy turi: Novostroyka / Vtorychka (eski uy)
+
+3 tadan uy chiqadi → “Sizga maqulmi?”
+
+15 ta uy ko‘rganidan so‘ng ogohlantirish:
+
+
+> "Sizga 15 ta variant ko‘rsatdik. Qaror qabul qilish oson bo‘lishi uchun vaqtincha to‘xtatamiz. Davom ettirasizmi?"
+Tugmalar: ✅ Davom etaman | ❌ To‘xtatish
+
+
+
+Depozit bo‘lsa: “Agar xohlasangiz, depozitsiz hal qilib beramiz. Hujjat asosida shartnoma tuziladi.”
+
+
+
+---
+
+5. Agar foydalanuvchi Sotuv ni tanlasa:
+
+Rayon
+
+Uy turi: Novostroyka / Vtorychka
+
+Narx
+
+Sotilgan uylar chiqadi
+
+Tugmasi chiqadi: “Ipoteka haqida ma'lumot kerakmi?”
+
+
+> Sotilganidan so‘ng: “Remont kerak bo‘lsa, tavsiya qilamiz.”
+
+
+
+
+---
+
+6. Agar foydalanuvchi Ofis yoki Noturar joy tanlasa:
+
+Rayon
+
+Maydon (m²)
+
+Narx
+
+Variantlar chiqadi
+
+
+
+---
+
+7. AI yordamida “Menga mos uy topish”:
+
+Bot savollar beradi:
+
+Qaysi rayon kerak?
+
+Narx?
+
+Kim yashaydi?
+
+Fuqarolik?
+
+Qaysi remont maqul?
+
+
+Javoblarga mos 3 ta uy chiqadi → “Sizga maqulmi?”
+
+AI foydalanuvchi odatiga qarab takliflar qiladi
+
+
+
+---
+
+8. Admin tomonidan uy qo‘shish:
+
+Faqat qo‘lda qo‘shiladi (kanaldan emas)
+
+Admin quyidagilarni kiritadi:
+
+Rasm
+
+Narx
+
+Rayon
+
+Remont
+
+Depozit
+
+Chet ellik bo‘ladimi
+
+Kimga uy kerak
+
+
+Baza ishonchli va nazoratda bo‘ladi
+
+
+
+---
+
+9. Foydalanuvchidan so‘rov olish:
+
+Mijoz “Menga shunaqa uy toping” dese — forma chiqadi:
+
+Rayon
+
+Narx
+
+Remont
+
+Fuqarolik
+
+Kim yashaydi
+
+
+Natijasi admin yoki agentga yuboriladi
+
+
+
+---
+
+10. Qo‘shimcha funksiyalar:
+
+ChatGPT yordam
+
+Avtomatik habarlar (yangilangan uylar)
+
+Valyuta konvertatsiyasi (USD + UZS)
+
+Video tur
+
+Profilga mos tavsiya
+
+Har bosqichda “Orqaga” tugmasi
+
+Tilni o‘zgartirish (🌐)
+
+Saqlangan uylar (⭐️)
+
+Reyting qoldirish (⭐️⭐️⭐️⭐️⭐️)
+
+Tez-tez tanlanadigan joylar (⚡️ rayonlar)
+
+Soxta mijozlarni filtrlash (passiv foydalanuvchi)
+
+Mini blog: foydali maslahatlar
+
+
+
+---
+
+11. Yangi: Foydalanuvchi fikrini so‘rash
+
+Bot foydalanuvchidan so‘raydi:
+
+
+> “Xizmatimiz foydali bo‘ldimi?”
+Tugmalar: ⭐️ – ⭐️⭐️ – ⭐️⭐️⭐️ – ⭐️⭐️⭐️⭐️ – ⭐️⭐️⭐️⭐️⭐️
+
+
+
+Natijalar admin panelga yuboriladi

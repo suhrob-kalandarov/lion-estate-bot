@@ -167,7 +167,7 @@ public enum Messages implements LocalizedMessage {
         };
     }
 
-    public Optional<Messages> findByText(String text, Language lang) {
+    public static Optional<Messages> findByText(String text, Language lang) {
         return Arrays.stream(values())
                 .filter(e -> e.get(lang).equals(text))
                 .findFirst();

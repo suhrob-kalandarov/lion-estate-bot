@@ -8,4 +8,8 @@ public class SessionService {
     public Session getOrCreateSession(Long userId) {
         return null;
     }
+
+    public void save(Session session) {
+
+    }
 }
