@@ -1,5 +1,4 @@
-/*
-package uz.pdp.lionestatebot.security;
+package uz.pdp.lionestatebot.admin.config.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -12,7 +11,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import uz.pdp.lionestatebot.bot.models.entity.User;
-import uz.pdp.lionestatebot.security.UserRepository;
+import uz.pdp.lionestatebot.bot.service.model.faces.UserRepository;
 
 import java.io.IOException;
 
@@ -21,7 +20,7 @@ import java.io.IOException;
 public class JwtFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
-    private final uz.pdp.lionestatebot.security.UserRepository userRepository;
+    private final UserRepository userRepository;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
@@ -38,7 +37,7 @@ public class JwtFilter extends OncePerRequestFilter {
             String username = jwtService.extractUsername(token);
             User user = userRepository.findByUsername(username).orElse(null);
 
-            if (user != null && user.getIsAdmin()) {
+            if (user != null && user.isAdmin()) {
                 UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
                         user, null, null);
                 auth.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
@@ -49,4 +48,3 @@ public class JwtFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 }
-*/
