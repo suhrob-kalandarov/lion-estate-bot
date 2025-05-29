@@ -5,7 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import uz.pdp.lionestatebot.admin.dto.AdminRequest;
 import uz.pdp.lionestatebot.admin.dto.AdminResponse;
-import uz.pdp.lionestatebot.admin.service.AdminService;
+import uz.pdp.lionestatebot.admin.service.AdminServiceImpl;
 import uz.pdp.lionestatebot.admin.service.PropertyService;
 
 import java.security.Principal;
@@ -15,17 +15,19 @@ import java.security.Principal;
 @RequiredArgsConstructor
 public class AdminController {
 
-    private final AdminService adminService;
+    private final AdminServiceImpl adminService;
     private final PropertyService propertyService;
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody AdminRequest loginReq) {
-        return adminService.login(loginReq);
+        //return adminService.login(loginReq);
+        return null;
     }
 
     @GetMapping("/me")
     public ResponseEntity<AdminResponse> getProfile(Principal principal) {
-        return ResponseEntity.ok(adminService.getProfile(principal));
+        //return ResponseEntity.ok(adminService.getProfile(principal));
+        return null;
     }
 
     /*@PostMapping("/property")

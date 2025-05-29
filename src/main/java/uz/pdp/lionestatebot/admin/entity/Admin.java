@@ -21,7 +21,7 @@ import uz.pdp.lionestatebot.bot.models.entity.User;
 @Table(name = "bot_admins")
 public class Admin extends BaseEntity {
 
-    private String email;
+    private String username;
     private String password;
 
     @OneToOne
