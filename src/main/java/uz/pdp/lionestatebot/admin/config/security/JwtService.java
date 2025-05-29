@@ -1,4 +1,4 @@
-package uz.pdp.lionestatebot.security;
+package uz.pdp.lionestatebot.admin.config.security;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

@@ -1,4 +1,4 @@
-package uz.pdp.lionestatebot.security;
+package uz.pdp.lionestatebot.bot.service.model.faces;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
