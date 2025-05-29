@@ -5,12 +5,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import uz.pdp.lionestatebot.bot.models.entity.Session;
 import uz.pdp.lionestatebot.bot.models.enums.SessionState;
-import uz.pdp.lionestatebot.bot.models.enums.entity.Language;
-import uz.pdp.lionestatebot.bot.process.HomeService;
-import uz.pdp.lionestatebot.bot.process.RentService;
-import uz.pdp.lionestatebot.bot.service.message.Messages;
-import uz.pdp.lionestatebot.bot.service.model.user.LanguageService;
-import uz.pdp.lionestatebot.bot.service.model.user.SessionService;
+import uz.pdp.lionestatebot.bot.process.callback.LanguageHomeService;
+import uz.pdp.lionestatebot.bot.process.message.HomeService;
+import uz.pdp.lionestatebot.bot.process.message.RentService;
+import uz.pdp.lionestatebot.bot.service.model.faces.SessionService;
+import uz.pdp.lionestatebot.bot.service.model.faces.UserService;
 
 import java.util.function.Consumer;
 
@@ -20,7 +19,8 @@ import java.util.function.Consumer;
 public class MessageHandler implements Consumer<Message> {
 
     private final SessionService sessionService;
-    private final LanguageService languageService;
+    private final UserService userService;
+    private final LanguageHomeService languageHomeService;
 
     private final HomeService homeService;
     private final RentService rentService;
@@ -31,8 +31,12 @@ public class MessageHandler implements Consumer<Message> {
         String text = message.text();
         Session session = sessionService.getOrCreateSession(userId);
 
-        if (text.equals("/start") && session.getState().equals(SessionState.START)) {
-            languageService.sendLanguageMenu(userId);
+        if (session.getState().equals(SessionState.START)) {
+            userService.createUser(message);
+        }
+
+        if (text.equals("/start") && (session.getState().equals(SessionState.START) || session.getState().equals(SessionState.HOME_MENU))) {
+            languageHomeService.sendMenu(session);
         }
 
         else if (session.getState().equals(SessionState.HOME_MENU)) {

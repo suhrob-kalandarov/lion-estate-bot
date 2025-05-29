@@ -16,7 +16,7 @@ public class ReplyButtonService {
                 new KeyboardButton(Messages.RENT_BTN.get(language)),
                 new KeyboardButton(Messages.SALE_BTN.get(language))
         ).addRow(
-                new KeyboardButton(Messages.ABOUT_US_MSG.get(language))
+                new KeyboardButton(Messages.ABOUT_US_BTN.get(language))
         ).addRow(
                 new KeyboardButton(Messages.ADD_AD_BTN.get(language)),
                 new KeyboardButton(Messages.LANGUAGE_BTN.get(language))

@@ -21,7 +21,7 @@ public class InlineButtonService {
                 new InlineKeyboardButton("\uD83C\uDDFA\uD83C\uDDFFO‘zbek").callbackData("lang_uz"),
                 new InlineKeyboardButton("\uD83C\uDDF7\uD83C\uDDFAРусский").callbackData("lang_ru")
         ).addRow(
-                new InlineKeyboardButton("\uD83C\uDDEC\uD83C\uDDE7English").callbackData("lang_ru"),
+                new InlineKeyboardButton("\uD83C\uDDEC\uD83C\uDDE7English").callbackData("lang_en"),
                 new InlineKeyboardButton("\uD83C\uDDE8\uD83C\uDDF3中文").callbackData("lang_cn")
         );
     }

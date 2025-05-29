@@ -6,6 +6,18 @@ import java.util.Optional;
 
 public enum Messages implements LocalizedMessage {
     /// BASE
+    TECHNICAL_WORKS_MSG(
+            "\uD83D\uDEE0 Texnik ishlar olib borilmoqda...\nIltimos, birozdan so'ng qayta urinib ko‘ring.",
+            "\uD83D\uDEE0 Ведутся технические работы...\nПожалуйста, попробуйте снова через некоторое время.",
+            "\uD83D\uDEE0 Technical maintenance in progress...\nPlease try again in a few moments.",
+            "\uD83D\uDEE0 正在进行系统维护…\n请稍后再试。"
+    ),
+    WELCOME_BACK_MSG(
+            "Sizni botimizda yana ko‘rib turganimizdan xursandmiz 😊",
+            "Мы рады снова видеть вас в нашем боте 😊",
+            "We’re happy to see you back in our bot 😊",
+            "很高兴再次在我们的机器人中见到您 😊"
+    ),
     BACK_BTN("🔙 Orqaga", "🔙 Назад", "🔙 Back", "🔙 返回"),
     SHARE_CONTACT_BTN(
             "📱 Kontakt ulashish",
@@ -20,6 +32,20 @@ public enum Messages implements LocalizedMessage {
             "📍 分享位置"
     ),
 
+    LANG_SET_SUCCESS_MSG(
+            "✅ Til muvaffaqiyatli tanlandi!",
+            "✅ Язык успешно выбран!",
+            "✅ Language has been successfully set!",
+            "✅ 语言已成功设置！"
+    ),
+
+    CHOOSE_MENU_MSG(
+            "⏬ Quyidagilardan birini tanlang:",
+            "⏬ Выберите один из следующих пунктов:",
+            "⏬ Please choose one of the following options:",
+            "⏬ 请选择以下选项之一："
+    ),
+
     /// HOME
     RENT_BTN("🏠 Arenda", "🏠 Аренда", "🏠 Rent", "🏠 租房"),
     SALE_BTN("🏠 Sotuv", "🏠 Продажа", "🏠 Sale", "🏠 出售"),
@@ -32,60 +58,68 @@ public enum Messages implements LocalizedMessage {
             "📢 Contact @Lion_estate761",
             "📢 联系 @Lion_estate761"
     ),
-    ABOUT_US_MSG(
+    ABOUT_US_INFO_MSG(
             """
-                    🏡 LION ESTATE – SIZNING ISHONCHLI UY AGENTLIGINGIZ!
+            🏡 LION ESTATE – SIZNING ISHONCHLI UY AGENTLIGINGIZ!
         
-                    📍 Toshkent shahri bo‘yicha
-                    ✅ 15 000+ qonuniy uylar bazasi!
-                    📂 Har bir uy — hujjatlari to‘liq va tayyor!
+            📍 Toshkent shahri bo‘yicha
+            ✅ 15 000+ qonuniy uylar bazasi!
+            📂 Har bir uy — hujjatlari to‘liq va tayyor!
         
-                    👨‍⚖️ Yuristlarimiz sizga yordam beradi — sotib olish, ijaraga olish yoki hujjatlashtirishda to‘liq yuridik qo‘llab-quvvatlash kafolatlanadi.
+            👨‍⚖️ Yuristlarimiz sizga yordam beradi — sotib olish, ijaraga olish yoki hujjatlashtirishda to‘liq yuridik qo‘llab-quvvatlash kafolatlanadi.
         
-                    🔐 Ishonch, sifat va qulaylik — barchasi LION ESTATE bilan!
+            🔐 Ishonch, sifat va qulaylik — barchasi LION ESTATE bilan!
         
-                    📞 Biz bilan bog‘laning va orzuyingizdagi uyni toping!
+            📞 Biz bilan bog‘laning va orzuyingizdagi uyni toping!
             """,
             """
-                    🏡 LION ESTATE – ВАШ НАДЕЖНЫЙ АГЕНТ ПО НЕДВИЖИМОСТИ!
+            🏡 LION ESTATE – ВАШ НАДЕЖНЫЙ АГЕНТ ПО НЕДВИЖИМОСТИ!
         
-                    📍 По городу Ташкент
-                    ✅ База данных из более 15 000 законных домов!
-                    📂 Каждый дом — с полными и готовыми документами!
+            📍 По городу Ташкент
+            ✅ База данных из более 15 000 законных домов!
+            📂 Каждый дом — с полными и готовыми документами!
         
-                    👨‍⚖️ Наши юристы помогут вам на всех этапах — от покупки до аренды и оформления документов.
+            👨‍⚖️ Наши юристы помогут вам на всех этапах — от покупки до аренды и оформления документов.
         
-                    🔐 Доверие, качество и удобство — всё с LION ESTATE!
+            🔐 Доверие, качество и удобство — всё с LION ESTATE!
         
-                    📞 Свяжитесь с нами и найдите дом своей мечты!
+            📞 Свяжитесь с нами и найдите дом своей мечты!
             """,
             """
-                    🏡 LION ESTATE – YOUR TRUSTED REAL ESTATE AGENCY!
+            🏡 LION ESTATE – YOUR TRUSTED REAL ESTATE AGENCY!
         
-                    📍 Covering the city of Tashkent
-                    ✅ Database of 15,000+ legal properties!
-                    📂 Each house comes with complete and verified documents!
+            📍 Covering the city of Tashkent
+            ✅ Database of 15,000+ legal properties!
+            📂 Each house comes with complete and verified documents!
         
-                    👨‍⚖️ Our lawyers will assist you — from buying and renting to full legal documentation support.
+            👨‍⚖️ Our lawyers will assist you — from buying and renting to full legal documentation support.
         
-                    🔐 Trust, quality, and convenience — all with LION ESTATE!
+            🔐 Trust, quality, and convenience — all with LION ESTATE!
         
-                    📞 Contact us and find your dream home!
+            📞 Contact us and find your dream home!
             """,
             """
-                    🏡 LION ESTATE – 您值得信赖的房地产代理！
+            🏡 LION ESTATE – 您值得信赖的房地产代理！
         
-                    📍 涵盖塔什干市
-                    ✅ 超过 15,000 套合法房源数据库！
-                    📂 每套房屋都配有完整的合法文件！
+            📍 涵盖塔什干市
+            ✅ 超过 15,000 套合法房源数据库！
+            📂 每套房屋都配有完整的合法文件！
         
-                    👨‍⚖️ 我们的律师将为您提供全程协助——购买、租赁或文件处理。
+            👨‍⚖️ 我们的律师将为您提供全程协助——购买、租赁或文件处理。
         
-                    🔐 信任、质量和便利——尽在 LION ESTATE！
+            🔐 信任、质量和便利——尽在 LION ESTATE！
         
-                    📞 联系我们，寻找您梦想中的家！
+            📞 联系我们，寻找您梦想中的家！
             """
     ),
+    BACK_TO_ABOUT_US_MSG(
+            "Sizga ma'lumot berganimizdan xursandmiz 😊",
+            "Мы рады, что предоставили вам информацию 😊",
+            "We're happy to have informed you 😊",
+            "很高兴为您提供了信息 😊"
+    ),
+
+
 
     /// RENT
     APARTMENT_BTN("🏠 Kvartira", "🏠 Квартира", "🏠 Apartment", "🏠 公寓"),

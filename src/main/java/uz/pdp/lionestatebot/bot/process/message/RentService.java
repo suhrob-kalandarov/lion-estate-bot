@@ -1,4 +1,4 @@
-package uz.pdp.lionestatebot.bot.process;
+package uz.pdp.lionestatebot.bot.process.message;
 
 import com.pengrad.telegrambot.model.Message;
 import lombok.RequiredArgsConstructor;

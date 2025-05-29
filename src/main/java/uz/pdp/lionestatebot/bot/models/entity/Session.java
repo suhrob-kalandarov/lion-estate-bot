@@ -26,6 +26,8 @@ public class Session extends Auditable {
     @Id
     protected Long userId;
 
+    private Integer messageId;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private SessionState state;

@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 import uz.pdp.lionestatebot.bot.models.base.BaseEntity;
 import uz.pdp.lionestatebot.bot.models.enums.entity.PropertyCategory;
+import uz.pdp.lionestatebot.bot.models.enums.entity.Renovation;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -20,8 +21,7 @@ import java.util.List;
 public class Property extends BaseEntity {
     private String title;
     private String type;
-    private String location;
-    private String remont;
+    private Renovation renovation;
     private String houseType;
 
     private BigDecimal price;
@@ -34,5 +34,9 @@ public class Property extends BaseEntity {
 
     @OneToMany(mappedBy = "property", cascade = CascadeType.ALL)
     private List<Image> images;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "location_id")
+    private Location location;
 }
 
