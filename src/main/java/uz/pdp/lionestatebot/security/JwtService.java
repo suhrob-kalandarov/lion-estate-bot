@@ -1,3 +1,4 @@
+/*
 package uz.pdp.lionestatebot.security;
 
 import io.jsonwebtoken.Jwts;
@@ -44,3 +45,4 @@ public class JwtService {
         }
     }
 }
+*/

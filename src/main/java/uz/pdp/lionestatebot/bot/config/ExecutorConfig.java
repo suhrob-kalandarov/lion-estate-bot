@@ -11,6 +11,6 @@ public class ExecutorConfig {
 
     @Bean
     public ExecutorService executorService() {
-        return Executors.newFixedThreadPool(4); // 30 o'rniga 4, chunki Telegram bot uchun yetarli
+        return Executors.newFixedThreadPool(14); // 30 o'rniga 4, chunki Telegram bot uchun yetarli
     }
 }

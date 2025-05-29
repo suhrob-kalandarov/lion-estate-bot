@@ -5,11 +5,11 @@ public enum ProfileType {
     STUDENT,   // Talaba
     SINGLE;     // Yolg‘iz (yakka)
 
-    public String getLabel() {
+    /*public String getLabel() {
         return switch (this) {
             case FAMILY -> "Oila";
             case STUDENT -> "Talaba";
             case SINGLE -> "Yolg‘iz";
         };
-    }
+    }*/
 }

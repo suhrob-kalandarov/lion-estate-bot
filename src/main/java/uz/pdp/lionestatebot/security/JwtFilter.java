@@ -1,3 +1,4 @@
+/*
 package uz.pdp.lionestatebot.security;
 
 import jakarta.servlet.FilterChain;
@@ -37,7 +38,7 @@ public class JwtFilter extends OncePerRequestFilter {
             String username = jwtService.extractUsername(token);
             User user = userRepository.findByUsername(username).orElse(null);
 
-            if (user != null && user.isAdmin()) {
+            if (user != null && user.getIsAdmin()) {
                 UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
                         user, null, null);
                 auth.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
@@ -48,3 +49,4 @@ public class JwtFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 }
+*/
