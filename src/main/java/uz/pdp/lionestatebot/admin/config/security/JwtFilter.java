@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 import uz.pdp.lionestatebot.admin.service.AdminService;
 import uz.pdp.lionestatebot.bot.models.entity.User;
+import uz.pdp.lionestatebot.bot.repositories.UserRepository;
 import uz.pdp.lionestatebot.bot.service.model.faces.UserService;
 
 import java.io.IOException;
@@ -21,8 +22,6 @@ import java.io.IOException;
 public class JwtFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
-    private final AdminService adminService;
-    private final UserService userService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
