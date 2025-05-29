@@ -25,4 +25,10 @@ public class User extends Auditable {
     private String fullName;
     private String username;
     private String phone;
+
+    public boolean isAdmin() {
+        return Boolean.TRUE.equals(this.isAdmin);
+    }
 }
+
+
