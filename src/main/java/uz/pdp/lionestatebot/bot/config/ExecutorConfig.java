@@ -9,6 +9,8 @@ import java.util.concurrent.Executors;
 @Configuration
 public class ExecutorConfig {
 
+    static boolean executor = false;
+
     @Bean
     public ExecutorService executorService() {
         return Executors.newFixedThreadPool(14); // 30 o'rniga 4, chunki Telegram bot uchun yetarli

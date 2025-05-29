@@ -24,6 +24,7 @@ public class BotLauncher implements CommandLineRunner {
     public void run(String... args) {
         bot.setUpdatesListener(updates -> {
             for (Update update : updates) {
+                if (ExecutorConfig.executor) continue;
                 executorService.execute(() -> {
                     if (update.message() != null) {
                         messageHandler.accept(update.message());

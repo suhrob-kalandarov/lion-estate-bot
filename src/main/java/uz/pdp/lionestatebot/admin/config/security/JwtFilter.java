@@ -10,6 +10,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import uz.pdp.lionestatebot.admin.entity.Admin;
 import uz.pdp.lionestatebot.admin.service.AdminService;
 import uz.pdp.lionestatebot.bot.models.entity.User;
 import uz.pdp.lionestatebot.bot.service.model.faces.UserService;
@@ -22,7 +23,6 @@ public class JwtFilter extends OncePerRequestFilter {
 
     private final JwtService jwtService;
     private final AdminService adminService;
-    private final UserService userService;
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
@@ -37,11 +37,11 @@ public class JwtFilter extends OncePerRequestFilter {
 
         if (token != null && jwtService.isTokenValid(token)) {
             String username = jwtService.extractUsername(token);
-            User user = userRepository.findByUsername(username).orElse(null);
+            Admin admin = adminService.getByUsername(username);
 
-            if (user != null && user.isAdmin()) {
+            if (admin != null && admin.getUser().getIsAdmin()) {
                 UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(
-                        user, null, null);
+                        admin, null, null);
                 auth.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }

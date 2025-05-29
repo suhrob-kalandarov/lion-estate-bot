@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import uz.pdp.lionestatebot.admin.dto.AdminRequest;
 import uz.pdp.lionestatebot.admin.dto.AdminResponse;
 import uz.pdp.lionestatebot.admin.service.AdminServiceImpl;
-import uz.pdp.lionestatebot.admin.service.PropertyService;
 
 import java.security.Principal;
 
@@ -16,7 +15,7 @@ import java.security.Principal;
 public class AdminController {
 
     private final AdminServiceImpl adminService;
-    private final PropertyService propertyService;
+    //private final PropertyService propertyService;
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody AdminRequest loginReq) {
