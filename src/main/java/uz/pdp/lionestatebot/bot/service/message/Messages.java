@@ -12,6 +12,12 @@ public enum Messages implements LocalizedMessage {
             "\uD83D\uDEE0 Technical maintenance in progress...\nPlease try again in a few moments.",
             "\uD83D\uDEE0 正在进行系统维护…\n请稍后再试。"
     ),
+    UPDATING_MSG(
+            "🔄 Yangilanishlar yuklanmoqda! Iltimos, kuting...",
+            "🔄 Загружаются обновления! Пожалуйста, подождите...",
+            "🔄 Updates are loading! Please wait...",
+            "🔄 更新正在加载中！请稍等..."
+    ),
     WELCOME_BACK_MSG(
             "Sizni botimizda yana ko‘rib turganimizdan xursandmiz 😊",
             "Мы рады снова видеть вас в нашем боте 😊",
@@ -117,6 +123,19 @@ public enum Messages implements LocalizedMessage {
             "Мы рады, что предоставили вам информацию 😊",
             "We're happy to have informed you 😊",
             "很高兴为您提供了信息 😊"
+    ),
+    ABOUT_COMPANY_MSG(
+            "🛅 \"LION ESTATE\" ko‘chmas mulk agentligi professionallar jamoasi tomonidan tashkil etilgan.\n" +
+                    "✅ Bizning xodimlarimiz turar joy, tijorat mulki, yangi binolar va ijaraga oid bozor segmentlarida faoliyat yuritadi.",
+
+            "🛅 Агентство недвижимости “LION ESTATE” основано профессиональной командой риелторов.\n" +
+                    "✅ Наши сотрудники работают во всех сегментах рынка с объектами жилой, коммерческой недвижимости, новостроек и аренде.",
+
+            "🛅 “LION ESTATE” real estate agency was founded by a professional team of realtors.\n" +
+                    "✅ Our staff operates in all market segments, including residential, commercial, new buildings, and rentals.",
+
+            "🛅 “LION ESTATE”房地产代理公司由专业的房地产经纪人团队创立。\n" +
+                    "✅ 我们的员工在住宅、商业、新建项目和租赁等各个市场领域开展业务。"
     ),
 
 
