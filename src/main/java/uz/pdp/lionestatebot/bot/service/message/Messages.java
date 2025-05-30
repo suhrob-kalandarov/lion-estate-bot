@@ -220,6 +220,8 @@ public enum Messages implements LocalizedMessage {
             "🏠 Great, now select the property type:",
             "🏠 好的，现在请选择房产类型："
     ),
+    NEW_BUILDING_BTN("🏗 New Building", "🏗 Новостройка", "🏗 Yangi bino", "🏗 新楼"),
+    SECONDARY_MARKET_BTN("🏚 Resale Property", "🏚 Вторичка", "🏚 Ikkilamchi uy", "🏚 二手房"),
 
 
     /// HOME
