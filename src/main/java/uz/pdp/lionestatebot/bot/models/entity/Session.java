@@ -48,6 +48,9 @@ public class Session extends Auditable {
     @Enumerated(EnumType.STRING)
     private Renovation renovation;
 
+    @Enumerated(EnumType.STRING)
+    private PropertyType propertyType;
+
     private String region;
 
     private Integer floor;

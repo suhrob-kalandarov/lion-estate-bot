@@ -7,6 +7,16 @@ import java.util.Optional;
 
 public enum Messages implements LocalizedMessage {
     /// BASE
+    NOT_FOUND_APT_MSG(
+            "🔎 Afsuski, siz tanlagan mezonlarga mos hech qanday uy topilmadi. Iltimos, boshqa parametrlarni sinab ko‘ring.",
+
+            "🔎 К сожалению, по заданным параметрам ничего не найдено. Попробуйте изменить критерии поиска.",
+
+            "🔎 Unfortunately, no apartments matched your criteria. Please try adjusting your search parameters.",
+
+            "🔎 很抱歉，没有符合您条件的房源。请尝试调整搜索参数。"
+    ),
+
     TECHNICAL_WORKS_MSG(
             "\uD83D\uDEE0 Texnik ishlar olib borilmoqda...\nIltimos, birozdan so'ng qayta urinib ko‘ring.",
             "\uD83D\uDEE0 Ведутся технические работы...\nПожалуйста, попробуйте снова через некоторое время.",
@@ -223,9 +233,77 @@ public enum Messages implements LocalizedMessage {
             "🏠 Great, now select the property type:",
             "🏠 好的，现在请选择房产类型："
     ),
-    NEW_BUILDING_BTN("\"\uD83C\uDFD7 Yangi bino", "🏗 Новостройка", "🏗 New Building", "🏗 新楼"),
-    SECONDARY_MARKET_BTN("🏚 Vtorychka", "🏚 Вторичка", "🏚 Resale Property", "🏚 二手房"),
+    NEW_BUILDING_BTN(
+            "Novostroyka",
+            "🏗 Новостройка",
+            "🏗 New building",
+            "🏗 新楼房"
+    ),
+    OLD_BUILDING_BTN(
+            "🏚Vtorychka",
+            "🏚 Вторичка",
+            "🏚 Resale (old) building",
+            "🏚 二手房"
+    ),
 
+    /// INFO ABOUT RENT
+    FULL_INFO_MSG(
+            """
+            🏢 Arenda turi: %s
+            👨‍👩‍👧‍👦 Kim yashaydi: %s
+            🌍 Fuqorolik: %s
+            📍 Rayon: %s
+            🛠 Remont turi: %s
+            💵 Narx: %s
+            🏢 Qavat: %s
+            🚪 Xona soni: %s
+            🏚 Uy holati: %s
+        
+            ✅ Ma'lumotlar qabul qilindi, rahmat! 🥳
+            """,
+
+            """
+            🏢 Тип аренды: %s
+            👨‍👩‍👧‍👦 Кто проживает: %s
+            🌍 Гражданство: %s
+            📍 Район: %s
+            🛠 Тип ремонта: %s
+            💵 Цена: %s
+            🏢 Этаж: %s
+            🚪 Кол-во комнат: %s
+            🏚 Состояние жилья: %s
+        
+            ✅ Данные приняты, спасибо! 🥳
+            """,
+
+            """
+            🏢 Rent type: %s
+            👨‍👩‍👧‍👦 Who will live: %s
+            🌍 Citizenship: %s
+            📍 District: %s
+            🛠 Renovation type: %s
+            💵 Price: %s
+            🏢 Floor: %s
+            🚪 Room count: %s
+            🏚 Property condition: %s
+        
+            ✅ Information received, thank you! 🥳
+            """,
+
+            """
+            🏢 租赁类型: %s
+            👨‍👩‍👧‍👦 居住人: %s
+            🌍 国籍: %s
+            📍 地区: %s
+            🛠 装修类型: %s
+            💵 价格: %s
+            🏢 楼层: %s
+            🚪 房间数: %s
+            🏚 房屋状况: %s
+        
+            ✅ 信息已接收，感谢您！🥳
+            """
+    ),
 
     /// HOME
     HOME_INFO_MSG(

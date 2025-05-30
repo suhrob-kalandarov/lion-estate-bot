@@ -20,7 +20,7 @@ public class ReplyButtonService {
         ).addRow(
                 new KeyboardButton(Messages.ADD_AD_BTN.get(language)),
                 new KeyboardButton(Messages.LANGUAGE_BTN.get(language))
-        );
+        ).resizeKeyboard(true) ;
     }
 
     public ReplyKeyboardMarkup shareContactBtn(Language language) {

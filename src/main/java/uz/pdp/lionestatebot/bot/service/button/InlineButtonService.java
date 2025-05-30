@@ -176,7 +176,7 @@ public class InlineButtonService {
     public InlineKeyboardMarkup propertyTypeBtns(Language language) {
         return new InlineKeyboardMarkup(
                 new InlineKeyboardButton(Messages.NEW_BUILDING_BTN.get(language)).callbackData(Messages.NEW_BUILDING_BTN.name()),
-                new InlineKeyboardButton(Messages.SECONDARY_MARKET_BTN.get(language)).callbackData(Messages.SECONDARY_MARKET_BTN.name()))
+                new InlineKeyboardButton(Messages.OLD_BUILDING_BTN.get(language)).callbackData(Messages.OLD_BUILDING_BTN.name()))
                 .addRow(
                         new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
                 ).addRow(
