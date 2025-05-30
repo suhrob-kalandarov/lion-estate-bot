@@ -26,7 +26,7 @@ public enum Messages implements LocalizedMessage {
             "很高兴再次在我们的机器人中见到您 😊"
     ),
     BACK_BTN("🔙 Orqaga", "🔙 Назад", "🔙 Back", "🔙 返回"),
-    BACK_TO_HOME_BTN("🔙 Bosh menyuga qaytish", "🔙 Вернуться в меню", "🔙 Back to Home", "🔙 返回主页"),
+    BACK_TO_HOME_BTN("⬅️ Bosh menyuga qaytish", "⬅️ Вернуться в меню", "⬅️ Back to Home", "⬅️ 返回主页"),
     SHARE_CONTACT_BTN(
             "📱 Kontakt ulashish",
             "📱 Поделиться контактом",
@@ -143,44 +143,41 @@ public enum Messages implements LocalizedMessage {
 
     /// RENT
     RENT_MENU_MSG(
-            "🏡 Iltimos, arenda turini tanlang:",
-            "🏡 Пожалуйста, выберите тип аренды:",
-            "🏡 Please select the type of rent:",
+            "🏡 Arenda turini tanlang:",
+            "🏡 выберите тип аренды:",
+            "🏡 Select the type of rent:",
             "🏡 请选择租赁类型："
     ),
     APARTMENT_BTN("🏠 Kvartira", "🏠 Квартира", "🏠 Apartment", "🏠 公寓"),
     OFFICE_BTN("🏢 Ofis", "🏢 Офис", "🏢 Office", "🏢 办公室"),
-    NON_RES_BTN("🏢 No turar joy", "🏢 Нежилое помещение", "🏢 Non-residential", "🏢 非住宅"),
+    NON_RES_BTN("🏢 No turar joy", "🏢 Нежилое", "🏢 Non-residential", "🏢 非住宅"),
+
     APARTMENT_MSG("Kvartira ijarasi bo‘limi", "Раздел аренды квартир", "Apartment rental section", "公寓租赁部分"),
     OFFICE_MSG("Ofis ijarasi bo‘limi", "Раздел аренды офисов", "Office rental section", "办公室租赁部分"),
 
     /// PROFILE
     PROFILE_MENU_MSG(
-            "👨‍👩‍👧‍👦 Kim yashaydi? Iltimos, tanlang:",
-            "👨‍👩‍👧‍👦 Кто будет проживать? Пожалуйста, выберите:",
-            "👨‍👩‍👧‍👦 Who will live there? Please choose:",
-            "👨‍👩‍👧‍👦 谁将居住？请选择："
+            "👨‍👩‍👧‍👦 Kim yashaydi:",
+            "👨‍👩‍👧‍👦 Кто будет проживать:",
+            "👨‍👩‍👧‍👦 Who will live there:",
+            "👨‍👩‍👧‍👦 谁将居住："
     ),
     FAMILY_BTN("👨‍👩‍👧 Oilaviy", "👨‍👩‍👧 Семейный", "👨‍👩‍👧 Family", "👨‍👩‍👧 家庭"),
     STUDENT_BTN("🎓 Talaba", "🎓 Студент", "🎓 Student", "🎓 学生"),
     SINGLE_BTN("👤 Yolg‘iz", "👤 Одинокий", "👤 Single", "👤 单身"),
 
     /// CITIZENSHIP
-    CITIZENSHIP_MENU_MSG(
-            "👍 Yahshi, endi kimligingizni kiriting:",
-            "👍 Хорошо, теперь введите свою гражданство:",
-            "👍 Great, now enter your citizenship:",
-            "👍 好的，请输入您的国籍："
-    ),
+    CITIZENSHIP_MENU_MSG("Fuqarolik:", "Гражданство:", "Citizenship:", "国籍:"),
+
     LOCAL_BTN("🇺🇿 O'zbekiston fuqarosi", "🇺🇿 Гражданин Узбекистана", "🇺🇿 Local (Uzbek citizen)", "🇺🇿 乌兹别克斯坦公民"),
     FOREIGNER_BTN("🌍 Chet el fuqarosi", "🌍 Иностранец", "🌍 Foreigner", "🌍 外国人"),
 
     /// REGION
     REGION_MENU_MSG(
-            "📍 Yahshi, endi rayon tanlang:",
-            "📍 Хорошо, теперь выберите район:",
-            "📍 Great, now select the district:",
-            "📍 好的，现在请选择地区："
+            "📍 Rayon tanlang:",
+            "📍 теперь выберите район:",
+            "📍 Now select the district:",
+            "📍 现在请选择地区："
     ),
 
     /// RENOVATION

@@ -42,18 +42,19 @@ public class InlineButtonService {
                 new InlineKeyboardButton(Messages.STUDENT_BTN.get(language)).callbackData(Messages.STUDENT_BTN.name()),
                 new InlineKeyboardButton(Messages.SINGLE_BTN.get(language)).callbackData(Messages.SINGLE_BTN.name())
         ).addRow(
-                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_rent_type_btns"),
                 new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
+        ).addRow(
+                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_rent_type_btns")
         );
     }
 
     public InlineKeyboardMarkup citizenshipBtns(Language language) {
         return new InlineKeyboardMarkup(
-                new InlineKeyboardButton(Messages.LOCAL_BTN.get(language)).callbackData(Messages.LOCAL_BTN.name())
-        ).addRow(
+                new InlineKeyboardButton(Messages.LOCAL_BTN.get(language)).callbackData(Messages.LOCAL_BTN.name()),
                 new InlineKeyboardButton(Messages.FOREIGNER_BTN.get(language)).callbackData(Messages.FOREIGNER_BTN.name())
         ).addRow(
-                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_resident_btns"),
+                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_resident_btns")
+        ).addRow(
                 new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
         );
     }
@@ -69,20 +70,14 @@ public class InlineButtonService {
 
         for (int i = 0; i < regions.size(); i += 2) {
             InlineKeyboardButton btn1 = new InlineKeyboardButton(regions.get(i)).callbackData("region_" + regions.get(i));
-            InlineKeyboardButton btn2 = (i + 1 < regions.size())
-                    ? new InlineKeyboardButton(regions.get(i + 1)).callbackData("region_" + regions.get(i + 1))
-                    : null;
-
-            if (btn2 != null) {
-                markup.addRow(btn1, btn2);
-            } else {
-                markup.addRow(btn1);
-            }
+            InlineKeyboardButton btn2 = new InlineKeyboardButton(regions.get(i + 1)).callbackData("region_" + regions.get(i + 1));
+            markup.addRow(btn1, btn2);
         }
 
         markup.addRow(
-                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_citizenship_btns"),
                 new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
+        ).addRow(
+                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_citizenship_btns")
         );
 
         return markup;
@@ -91,12 +86,13 @@ public class InlineButtonService {
     public InlineKeyboardMarkup renovationBtns(Language language) {
         return new InlineKeyboardMarkup(
                 new InlineKeyboardButton(Messages.EURO_RE_BTN.get(language)).callbackData(Messages.EURO_RE_BTN.name()),
-                new InlineKeyboardButton(Messages.MINIMALISM_RE_BTN.get(language)).callbackData(Messages.MINIMALISM_RE_BTN.name()),
-                new InlineKeyboardButton(Messages.HIGHTECH_RE_BTN.get(language)).callbackData(Messages.HIGHTECH_RE_BTN.name())
+                new InlineKeyboardButton(Messages.MINIMALISM_RE_BTN.get(language)).callbackData(Messages.MINIMALISM_RE_BTN.name())
         ).addRow(
-                new InlineKeyboardButton(Messages.SIMPLE_RE_BTN.get(language)).callbackData(Messages.SINGLE_BTN.name())
+                new InlineKeyboardButton(Messages.HIGHTECH_RE_BTN.get(language)).callbackData(Messages.HIGHTECH_RE_BTN.name()),
+                new InlineKeyboardButton(Messages.SIMPLE_RE_BTN.get(language)).callbackData(Messages.SIMPLE_RE_BTN.name())
         ).addRow(
-                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_regions_btns"),
+                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_regions_btns")
+        ).addRow(
                 new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
         );
     }
@@ -109,40 +105,82 @@ public class InlineButtonService {
                 new InlineKeyboardButton("600-900").callbackData("cost_600-900"),
                 new InlineKeyboardButton("900+").callbackData("cost_900+")
         ).addRow(
-                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_renovation_btns"),
+                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_renovation_btns")
+        ).addRow(
                 new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
         );
     }
 
     public InlineKeyboardMarkup floorBtns(Language language) {
         var markup = new InlineKeyboardMarkup();
-        for (int i = 1; i < 20; i++) {
-            markup.addRow(new InlineKeyboardButton(i + "").callbackData("floor_" + i));
+        List<InlineKeyboardButton> row = new ArrayList<>();
+
+        for (int i = 1; i <= 20; i++) {
+            row.add(new InlineKeyboardButton(String.valueOf(i)).callbackData("floor_" + i));
+
+            if (i % 4 == 0) {
+                markup.addRow(row.toArray(new InlineKeyboardButton[0]));
+                row = new ArrayList<>();
+            }
         }
-        return markup.addRow(
-                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_costs_btns"),
-                new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
-        );
+
+        if (!row.isEmpty()) {
+            markup.addRow(row.toArray(new InlineKeyboardButton[0]));
+        }
+
+        markup
+                .addRow(
+                        new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_costs_btns")
+                )
+                .addRow(
+                        new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
+                );
+
+        return markup;
     }
 
     public InlineKeyboardMarkup roomCountBtns(Language language) {
         var markup = new InlineKeyboardMarkup();
-        for (int i = 1; i < 10; i++) {
-            markup.addRow(new InlineKeyboardButton(i + "").callbackData("room_" + i));
-        }
-        return markup.addRow(
-                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_floor_btns"),
+
+        // 1-qator: 1 dan 5 gacha
+        markup.addRow(
+                new InlineKeyboardButton("1").callbackData("room_1"),
+                new InlineKeyboardButton("2").callbackData("room_2"),
+                new InlineKeyboardButton("3").callbackData("room_3"),
+                new InlineKeyboardButton("4").callbackData("room_4"),
+                new InlineKeyboardButton("5").callbackData("room_5")
+        );
+
+        // 2-qator: 6 dan 10 gacha
+        markup.addRow(
+                new InlineKeyboardButton("6").callbackData("room_6"),
+                new InlineKeyboardButton("7").callbackData("room_7"),
+                new InlineKeyboardButton("8").callbackData("room_8"),
+                new InlineKeyboardButton("9").callbackData("room_9"),
+                new InlineKeyboardButton("10").callbackData("room_10")
+        );
+
+        // Back tugmalari
+        markup.addRow(
+                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_floor_btns")
+        );
+        markup.addRow(
                 new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
         );
+
+        return markup;
     }
+
+
 
     public InlineKeyboardMarkup propertyTypeBtns(Language language) {
         return new InlineKeyboardMarkup(
                 new InlineKeyboardButton(Messages.NEW_BUILDING_BTN.get(language)).callbackData(Messages.NEW_BUILDING_BTN.name()),
                 new InlineKeyboardButton(Messages.SECONDARY_MARKET_BTN.get(language)).callbackData(Messages.SECONDARY_MARKET_BTN.name()))
                 .addRow(
-                        new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_rooms_btns"),
                         new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
+                ).addRow(
+                        new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_rooms_btns")
                 );
     }
 
@@ -156,8 +194,9 @@ public class InlineButtonService {
         ).addRow(
                 new InlineKeyboardButton("900+ K").callbackData("cost_900+")
         ).addRow(
-                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData(Messages.BACK_BTN.name()),
                 new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
+        ).addRow(
+                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_costs_btns")
         );
     }
 
