@@ -227,7 +227,7 @@ public enum Messages implements LocalizedMessage {
             "🏠 好的，现在请选择房产类型："
     ),
     NEW_BUILDING_BTN("\"\uD83C\uDFD7 Yangi bino", "🏗 Новостройка", "🏗 New Building", "🏗 新楼"),
-    SECONDARY_MARKET_BTN("🏚 Vtorichka", "🏚 Вторичка", "🏚 Resale Property", "🏚 二手房"),
+    SECONDARY_MARKET_BTN("🏚 Vtorychka", "🏚 Вторичка", "🏚 Resale Property", "🏚 二手房"),
 
 
     /// HOME
