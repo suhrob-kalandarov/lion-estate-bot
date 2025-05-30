@@ -31,11 +31,11 @@ public class CallbackHandler implements Consumer<CallbackQuery> {
         if (state.equals(SessionState.LANG_MENU) || state.equals(SessionState.START)) {
             languageHomeService.accept(callbackQuery, session);
 
+        } else if (data.startsWith("back_to")) {
+            rollbackService.accept(callbackQuery, session);
+
         } else if (state.equals(SessionState.RENT_MENU)) {
             rentHomeService.accept(callbackQuery, session);
-
-        } else if (data.startsWith("back_to") && state.equals(SessionState.ABOUT_US)) {
-            rollbackService.accept(callbackQuery, session);
 
         } else {
 
