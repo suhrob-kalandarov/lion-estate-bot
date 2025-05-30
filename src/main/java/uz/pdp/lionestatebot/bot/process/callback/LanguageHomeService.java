@@ -32,33 +32,40 @@ public class LanguageHomeService implements BiConsumer<CallbackQuery, Session> {
     @Override
     public void accept(CallbackQuery callbackQuery, Session session) {
         String data = callbackQuery.data();
+        Long userId = session.getUserId();
 
         if (data.startsWith("lang_")) {
             String langCode = data.split("_")[1]; // "uz", "ru", "cn", "en"
             try {
                 Language language = Language.valueOf(langCode);
-                session.setLanguage(language);
-                session.setState(SessionState.HOME_MENU);
 
                 botEditMessageSender.editMessage(
-                        session.getUserId(), session.getMessageId(),
+                        userId, session.getMessageId(),
                         Messages.LANG_SET_SUCCESS_MSG.get(language)
                 );
 
+                if (session.getState().equals(SessionState.START)){
+                    messageSender.sendCompanyPhotoMessage(userId,
+                            Messages.ABOUT_COMPANY_MSG.get(language)
+                    );
+                }
+
                 SendResponse response = messageSender.sendMarkupMessage(
-                        session.getUserId(),
+                        userId,
                         Messages.CHOOSE_MENU_MSG.get(language),
                         replyButtonService.homeBtns(language)
                 );
 
+                session.setLanguage(language);
+                session.setState(SessionState.HOME_MENU);
                 session.setMessageId(response.message().messageId());
                 sessionService.save(session);
             } catch (IllegalArgumentException e) {
                 log.error("UNK {}", e.getMessage());
-                messageSender.sendMessage(session.getUserId(), "❌ Noto‘g‘ri til kodi tanlandi.");
+                messageSender.sendMessage(userId, "❌ Noto‘g‘ri til kodi tanlandi.");
             }
         } else {
-            messageSender.sendMessage(session.getUserId(), "❌ Illegal btn.");
+            messageSender.sendMessage(userId, "❌ Illegal btn.");
             log.error("UNK: {}", data);
         }
     }
@@ -74,7 +81,7 @@ public class LanguageHomeService implements BiConsumer<CallbackQuery, Session> {
                     "Choose language:",
                     inlineButtonService.languageBtns()
             );
-            session.setState(SessionState.LANG_MENU);
+            //session.setState(SessionState.LANG_MENU);
             session.setMessageId(response.message().messageId());
             sessionService.save(session);
             return;
@@ -82,8 +89,7 @@ public class LanguageHomeService implements BiConsumer<CallbackQuery, Session> {
 
         messageSender.sendCompanyPhotoMessage(userId,
                 Messages.WELCOME_BACK_MSG.get(language)
-                        + "\n\n" + Messages.ABOUT_COMPANY_MSG.get(language),
-                new ReplyKeyboardRemove()
+                        + "\n\n" + Messages.ABOUT_COMPANY_MSG.get(language)
         );
 
         messageSender.sendMarkupMessage(userId, Messages.CHOOSE_MENU_MSG.get(language), replyButtonService.homeBtns(language));
