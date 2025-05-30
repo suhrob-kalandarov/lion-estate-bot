@@ -48,7 +48,8 @@ public class InlineButtonService {
 
     public InlineKeyboardMarkup citizenshipBtns(Language language) {
         return new InlineKeyboardMarkup(
-                new InlineKeyboardButton(Messages.LOCAL_BTN.get(language)).callbackData(Messages.LOCAL_BTN.name()),
+                new InlineKeyboardButton(Messages.LOCAL_BTN.get(language)).callbackData(Messages.LOCAL_BTN.name())
+        ).addRow(
                 new InlineKeyboardButton(Messages.FOREIGNER_BTN.get(language)).callbackData(Messages.FOREIGNER_BTN.name())
         ).addRow(
                 new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData(Messages.BACK_BTN.name())
@@ -110,7 +111,7 @@ public class InlineButtonService {
 
     public InlineKeyboardMarkup floorBtns(Language language) {
         var markup = new InlineKeyboardMarkup();
-        for (int i = 1; i < 10; i++) {
+        for (int i = 1; i < 20; i++) {
             markup.addRow(new InlineKeyboardButton(i + "").callbackData("floor_" + i));
         }
         return markup.addRow(

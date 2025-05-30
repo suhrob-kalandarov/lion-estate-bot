@@ -26,14 +26,15 @@ public class CallbackHandler implements Consumer<CallbackQuery> {
         Long userId = callbackQuery.from().id();
         String data = callbackQuery.data();
         Session session = sessionService.getOrCreateSession(userId);
+        SessionState state = session.getState();
 
-        if (session.getState().equals(SessionState.LANG_MENU)) {
+        if (state.equals(SessionState.LANG_MENU) || state.equals(SessionState.START)) {
             languageHomeService.accept(callbackQuery, session);
 
-        } else if (session.getState().equals(SessionState.RENT_MENU)) {
+        } else if (state.equals(SessionState.RENT_MENU)) {
             rentHomeService.accept(callbackQuery, session);
 
-        } else if (data.startsWith("back_to") && session.getState().equals(SessionState.ABOUT_US)) {
+        } else if (data.startsWith("back_to") && state.equals(SessionState.ABOUT_US)) {
             rollbackService.accept(callbackQuery, session);
 
         } else {

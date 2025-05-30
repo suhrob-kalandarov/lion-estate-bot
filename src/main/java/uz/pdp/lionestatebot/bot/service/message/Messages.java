@@ -184,9 +184,9 @@ public enum Messages implements LocalizedMessage {
             "🛠 Great, now select the renovation type:",
             "🛠 好的，现在请选择装修类型："
     ),
-    EURO_RE_BTN("🛠 Euro remont", "🛠 Евро ремонт", "🛠 Euro renovation", "🛠 欧式装修"),
-    MINIMALISM_RE_BTN("🎨 Minimalizm remont", "🎨 Минимализм ремонт", "🎨 Minimalism renovation", "🎨 极简装修"),
-    HIGHTECH_RE_BTN("🔧 Haytek remont", "🔧 Хайтек ремонт", "🔧 High-tech renovation", "🔧 高科技装修"),
+    EURO_RE_BTN("🛠 Euro", "🛠 Евро", "🛠 Euro", "🛠 欧式装修"),
+    MINIMALISM_RE_BTN("🎨 Minimalizm", "🎨 Минимализм", "🎨 Minimalism", "🎨 极简装修"),
+    HIGHTECH_RE_BTN("🔧 Haytek", "🔧 Хайтек", "🔧 High-tech", "🔧 高科技装修"),
     SIMPLE_RE_BTN("🏡 Oddiy uy", "🏡 Простой дом", "🏡 Simple house", "🏡 普通住宅"),
 
     /// BUDGET

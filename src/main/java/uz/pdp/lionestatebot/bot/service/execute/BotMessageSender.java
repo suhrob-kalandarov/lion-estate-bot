@@ -55,7 +55,7 @@ public class BotMessageSender {
     /// lion-estate-logo.jpeg
     ///
     /// @return
-    public SendResponse sendCompanyPhotoMessage(Long chatId, String text, Keyboard keyboard) {
+    public SendResponse sendCompanyPhotoMessage(Long chatId, String text) {
         SendResponse response = null;
         try {
             // Faylning resurslardan to‘liq pathini olish
@@ -70,7 +70,7 @@ public class BotMessageSender {
             response = bot.execute(new SendPhoto(chatId, photoFile)
                     .caption("<blockquote>" + text + "</blockquote>")
                     .parseMode(ParseMode.HTML)
-                    .replyMarkup(keyboard)
+                    .replyMarkup(new ReplyKeyboardRemove())
             );
         } catch (Exception e) {
             e.printStackTrace();

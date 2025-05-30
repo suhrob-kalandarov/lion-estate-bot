@@ -29,9 +29,7 @@ public class HomeService implements BiConsumer<Message, Session> {
 
     private final SessionService sessionService;
     private final ReplyButtonService replyButtonService;
-    private final InlineButtonService inlineButtonService;
     private final LanguageHomeService languageHomeService;
-    private final BotEditMessageSender botEditMessageSender;
     private final BotMessageSender botMessageSender;
     private final RentHomeService rentHomeService;
 
@@ -67,10 +65,6 @@ public class HomeService implements BiConsumer<Message, Session> {
     }
 
     private void handleRentBtn(Session session, Language lang) {
-      /*  botMessageSender.sendMarkupMessage(session.getUserId(),
-               Messages.TECHNICAL_WORKS_MSG.get(lang),
-                replyButtonService.homeBtns(lang)
-        );*/
         session.setState(SessionState.RENT_MENU);
         rentHomeService.sendMenu(session);
 
@@ -86,10 +80,6 @@ public class HomeService implements BiConsumer<Message, Session> {
     }
 
     private void handleAboutUsBtn(Session session, Language lang) {
-       /* botEditMessageSender.editMessage(session.getUserId(), session.getMessageId(),
-                Messages.ABOUT_US_INFO_MSG.get(lang),
-                new InlineKeyboardMarkup(new InlineKeyboardButton(Messages.BACK_BTN.get(lang)).callbackData(Messages.BACK_BTN.name()))
-        );*/
         SendResponse response = botMessageSender.sendInlineMarkupMessage(session.getUserId(),
                 Messages.ABOUT_US_INFO_MSG.get(lang),
                 new InlineKeyboardMarkup(new InlineKeyboardButton(Messages.BACK_BTN.get(lang)).callbackData("back_to_home_from_about_us"))
@@ -100,10 +90,6 @@ public class HomeService implements BiConsumer<Message, Session> {
     }
 
     private void handleAddAdBtn(Session session, Language lang) {
-
         botMessageSender.sendMarkupMessage(session.getUserId(), Messages.ADD_AD_MSG.get(lang), replyButtonService.homeBtns(lang));
-
-        /*session.setState(SessionState.ADD_AD_MENU);
-        sessionService.save(session);*/
     }
 }
