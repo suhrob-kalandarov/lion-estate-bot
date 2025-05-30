@@ -1,6 +1,7 @@
 package uz.pdp.lionestatebot.bot.process.callback;
 
 import com.pengrad.telegrambot.model.CallbackQuery;
+import com.pengrad.telegrambot.model.request.ReplyKeyboardRemove;
 import com.pengrad.telegrambot.response.SendResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -65,6 +66,7 @@ public class LanguageHomeService implements BiConsumer<CallbackQuery, Session> {
     public void sendMenu(Session session) {
         Long userId = session.getUserId();
         SessionState state = session.getState();
+        Language language = session.getLanguage();
 
         if (state.equals(SessionState.START) || state.equals(SessionState.LANG_MENU)) {
             SendResponse response = messageSender.sendInlineMarkupMessage(
@@ -78,8 +80,12 @@ public class LanguageHomeService implements BiConsumer<CallbackQuery, Session> {
             return;
         }
 
-        Language language = session.getLanguage();
-        messageSender.sendRemoveReplyMarkup(userId, Messages.WELCOME_BACK_MSG.get(language));
+        messageSender.sendCompanyPhotoMessage(userId,
+                Messages.WELCOME_BACK_MSG.get(language)
+                        + "\n\n" + Messages.ABOUT_COMPANY_MSG.get(language),
+                new ReplyKeyboardRemove()
+        );
+
         messageSender.sendMarkupMessage(userId, Messages.CHOOSE_MENU_MSG.get(language), replyButtonService.homeBtns(language));
         session.setState(SessionState.HOME_MENU);
         sessionService.save(session);
