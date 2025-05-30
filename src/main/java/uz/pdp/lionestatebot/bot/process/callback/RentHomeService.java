@@ -100,6 +100,8 @@ public class RentHomeService implements BiConsumer<CallbackQuery, Session> {
         } else if (data.equals(Messages.NON_RES_BTN.name())) {
 
         }
+
+        sessionService.save(session);
     }
 
     public void sendMenu(Session session) {

@@ -42,7 +42,7 @@ public class InlineButtonService {
                 new InlineKeyboardButton(Messages.STUDENT_BTN.get(language)).callbackData(Messages.STUDENT_BTN.name()),
                 new InlineKeyboardButton(Messages.SINGLE_BTN.get(language)).callbackData(Messages.SINGLE_BTN.name())
         ).addRow(
-                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData(Messages.BACK_BTN.name())
+                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_rent_menu")
         );
     }
 
