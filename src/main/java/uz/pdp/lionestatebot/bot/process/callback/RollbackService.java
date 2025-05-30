@@ -43,6 +43,7 @@ public class RollbackService implements BiConsumer<CallbackQuery, Session> {
             session.setState(SessionState.HOME_MENU);
 
         } else if (data.equals("back_to_home_from_rent")) {
+            botEditMessageSender.editMessage(userId, messageId, "↩");
             botMessageSender.sendMarkupMessage(
                     userId,
                     Messages.CHOOSE_MENU_MSG.get(session.getLanguage()),
@@ -50,7 +51,7 @@ public class RollbackService implements BiConsumer<CallbackQuery, Session> {
             );
             session.setState(SessionState.HOME_MENU);
 
-        } else if (data.equals("back_to_rent_menu")){
+        } else if (data.equals("back_to_rent_type_btns")){
             SendResponse sendResponse = botEditMessageSender.editMessage(
                     userId, messageId,
                     Messages.RENT_MENU_MSG.get(language),
@@ -58,6 +59,82 @@ public class RollbackService implements BiConsumer<CallbackQuery, Session> {
             );
             session.setMessageId(sendResponse.message().messageId());
             session.setState(SessionState.RENT_MENU);
+            
+        } else if (data.equals("back_to_resident_btns")) {
+            SendResponse sendResponse = botEditMessageSender.editMessage(
+                    userId, messageId,
+                    Messages.PROFILE_MENU_MSG.get(language),
+                    inlineButtonService.apartmentBtns(language)
+            );
+            session.setMessageId(sendResponse.message().messageId());
+            session.setState(SessionState.RENT_MENU);
+            
+        } else if (data.equals("back_to_citizenship_btns")) {
+            SendResponse sendResponse = botEditMessageSender.editMessage(
+                    userId, messageId,
+                    Messages.CITIZENSHIP_MENU_MSG.get(language),
+                    inlineButtonService.citizenshipBtns(language)
+            );
+            session.setMessageId(sendResponse.message().messageId());
+            session.setState(SessionState.RENT_MENU);
+
+        } else if (data.equals("back_to_regions_btns")) {
+            SendResponse sendResponse = botEditMessageSender.editMessage(
+                    userId, messageId,
+                    Messages.REGION_MENU_MSG.get(language),
+                    inlineButtonService.regionsBtn(language)
+            );
+            session.setMessageId(sendResponse.message().messageId());
+            session.setState(SessionState.RENT_MENU);
+
+        } else if (data.equals("back_to_renovation_btns")) {
+            SendResponse sendResponse = botEditMessageSender.editMessage(
+                    userId, messageId,
+                    Messages.RENOVATION_MENU_MSG.get(language),
+                    inlineButtonService.renovationBtns(language)
+            );
+            session.setMessageId(sendResponse.message().messageId());
+            session.setState(SessionState.RENT_MENU);
+            
+        } else if (data.equals("back_to_costs_btns")) {
+            SendResponse sendResponse = botEditMessageSender.editMessage(
+                    userId, messageId,
+                    Messages.BUDGET_MENU_MSG.get(language),
+                    inlineButtonService.costBtns(language)
+            );
+            session.setMessageId(sendResponse.message().messageId());
+            session.setState(SessionState.RENT_MENU);
+
+        } else if (data.equals("back_to_floor_btns")) {
+            SendResponse sendResponse = botEditMessageSender.editMessage(
+                    userId, messageId,
+                    Messages.FLOOR_MENU_MSG.get(language),
+                    inlineButtonService.floorBtns(language)
+            );
+            session.setMessageId(sendResponse.message().messageId());
+            session.setState(SessionState.RENT_MENU);
+
+        } else if (data.equals("back_to_rooms_btns")) {
+            SendResponse sendResponse = botEditMessageSender.editMessage(
+                    userId, messageId,
+                    Messages.ROOM_COUNT_MENU_MSG.get(language),
+                    inlineButtonService.roomCountBtns(language)
+            );
+            session.setMessageId(sendResponse.message().messageId());
+            session.setState(SessionState.RENT_MENU);
+            
+        } else if (data.equals("back_to_property_type_btns")) {
+            SendResponse sendResponse = botEditMessageSender.editMessage(
+                    userId, messageId,
+                    Messages.PROPERTY_TYPE_MENU_MSG.get(language),
+                    inlineButtonService.propertyTypeBtns(language)
+            );
+            session.setMessageId(sendResponse.message().messageId());
+            session.setState(SessionState.RENT_MENU);
+            
+        } else if (data.equals("back_to_")) {
+
+
         }
 
         sessionService.save(session);
