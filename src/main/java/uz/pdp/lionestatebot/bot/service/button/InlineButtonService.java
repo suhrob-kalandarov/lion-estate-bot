@@ -42,9 +42,9 @@ public class InlineButtonService {
                 new InlineKeyboardButton(Messages.STUDENT_BTN.get(language)).callbackData(Messages.STUDENT_BTN.name()),
                 new InlineKeyboardButton(Messages.SINGLE_BTN.get(language)).callbackData(Messages.SINGLE_BTN.name())
         ).addRow(
-                new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
-        ).addRow(
                 new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_rent_type_btns")
+        ).addRow(
+                new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
         );
     }
 
@@ -75,9 +75,9 @@ public class InlineButtonService {
         }
 
         markup.addRow(
-                new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
-        ).addRow(
                 new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_citizenship_btns")
+        ).addRow(
+                new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
         );
 
         return markup;
@@ -178,9 +178,9 @@ public class InlineButtonService {
                 new InlineKeyboardButton(Messages.NEW_BUILDING_BTN.get(language)).callbackData(Messages.NEW_BUILDING_BTN.name()),
                 new InlineKeyboardButton(Messages.SECONDARY_MARKET_BTN.get(language)).callbackData(Messages.SECONDARY_MARKET_BTN.name()))
                 .addRow(
-                        new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
-                ).addRow(
                         new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_rooms_btns")
+                ).addRow(
+                        new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
                 );
     }
 
@@ -194,9 +194,9 @@ public class InlineButtonService {
         ).addRow(
                 new InlineKeyboardButton("900+ K").callbackData("cost_900+")
         ).addRow(
-                new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
-        ).addRow(
                 new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_costs_btns")
+        ).addRow(
+                new InlineKeyboardButton(Messages.BACK_TO_HOME_BTN.get(language)).callbackData("back_to_home_from_rent")
         );
     }
 
