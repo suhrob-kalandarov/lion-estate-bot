@@ -26,6 +26,7 @@ public enum Messages implements LocalizedMessage {
             "很高兴再次在我们的机器人中见到您 😊"
     ),
     BACK_BTN("🔙 Orqaga", "🔙 Назад", "🔙 Back", "🔙 返回"),
+    BACK_TO_HOME_BTN("🔙 Bosh menyuga qaytish", "🔙 Вернуться в меню", "🔙 Back to Home", "🔙 返回主页"),
     SHARE_CONTACT_BTN(
             "📱 Kontakt ulashish",
             "📱 Поделиться контактом",
