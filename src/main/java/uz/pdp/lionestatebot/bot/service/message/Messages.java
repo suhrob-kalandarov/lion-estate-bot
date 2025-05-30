@@ -189,6 +189,39 @@ public enum Messages implements LocalizedMessage {
     HIGHTECH_RE_BTN("🔧 Haytek remont", "🔧 Хайтек ремонт", "🔧 High-tech renovation", "🔧 高科技装修"),
     SIMPLE_RE_BTN("🏡 Oddiy uy", "🏡 Простой дом", "🏡 Simple house", "🏡 普通住宅"),
 
+    /// BUDGET
+    BUDGET_MENU_MSG(
+            "💰 Yahshi, endi narx tanlang:",
+            "💰 Хорошо, теперь выберите цену:",
+            "💰 Great, now select the price:",
+            "💰 好的，现在请选择价格："
+    ),
+
+    /// FLOOR
+    FLOOR_MENU_MSG(
+            "🏢 Nechinchi qavat kerak? (faqat raqam kiriting)",
+            "🏢 Какой этаж вам нужен? (введите только цифру)",
+            "🏢 Which floor do you need? (enter numbers only)",
+            "🏢 您需要几楼？（仅输入数字）"
+    ),
+
+    /// ROOM-COUNT
+    ROOM_COUNT_MENU_MSG(
+            "🚪 Nechta xona kerak? (faqat raqam kiriting)",
+            "🚪 Сколько комнат нужно? (введите только цифру)",
+            "🚪 How many rooms do you need? (enter numbers only)",
+            "🚪 您需要几间房？（仅输入数字）"
+    ),
+
+    /// PROPERTY-TYPE
+    PROPERTY_TYPE_MENU_MSG(
+            "🏠 Yahshi, endi turi tanlang:",
+            "🏠 Хорошо, теперь выберите тип жилья:",
+            "🏠 Great, now select the property type:",
+            "🏠 好的，现在请选择房产类型："
+    ),
+
+
     /// HOME
     HOME_INFO_MSG(
             """

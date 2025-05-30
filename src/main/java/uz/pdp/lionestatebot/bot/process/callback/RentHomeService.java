@@ -63,10 +63,38 @@ public class RentHomeService implements BiConsumer<CallbackQuery, Session> {
             session.setRegion(data);
             botEditMessageSender.editMessage(userId, messageId, Messages.RENOVATION_MENU_MSG.get(language), inlineButtonService.renovationBtns(language));
 
-        } /*else if (data.equals(Messages.EURO_RE_BTN.name())) {
-           session.setRenovation(Renovation);
+        } else if (data.equals(Messages.EURO_RE_BTN.name())) {
+           session.setRenovation(Renovation.EURO);
+           botEditMessageSender.editMessage(userId,messageId,Messages.BUDGET_MENU_MSG.get(language), inlineButtonService.costBtns(language) );
 
-        }*/ else if (data.equals(Messages.OFFICE_BTN.name())) {
+        } else if (data.equals(Messages.MINIMALISM_RE_BTN.name())) {
+            session.setRenovation(Renovation.MINIMALISM);
+            botEditMessageSender.editMessage(userId, messageId,Messages.BUDGET_MENU_MSG.get(language), inlineButtonService.costBtns(language) );
+
+        } else if (data.equals(Messages.SIMPLE_RE_BTN.name())) {
+            session.setRenovation(Renovation.SIMPLE);
+            botEditMessageSender.editMessage(userId, messageId,Messages.BUDGET_MENU_MSG.get(language), inlineButtonService.costBtns(language) );
+
+        } else if (data.equals(Messages.HIGHTECH_RE_BTN.name())) {
+            session.setRenovation(Renovation.HIGH_TECH);
+            botEditMessageSender.editMessage(userId, messageId, Messages.BUDGET_MENU_MSG.get(language), inlineButtonService.costBtns(language) );
+
+        } else if (data.startsWith("cost_")) {
+            data = data.replace("cost_", "");
+            session.setCost(data);
+            botEditMessageSender.editMessage(userId, messageId, Messages.FLOOR_MENU_MSG.get(language), inlineButtonService.floorBtns(language));
+
+        } else if (data.startsWith("floor_")) {
+            data = data.replace("floor_", "");
+            session.setFloor(Integer.parseInt(data));
+            botEditMessageSender.editMessage(userId, messageId, Messages.ROOM_COUNT_MENU_MSG.get(language), inlineButtonService.floorBtns(language));
+
+        } else if (data.startsWith("room_")) {
+            data = data.replace("room_", "");
+            session.setRoom(Integer.parseInt(data));
+            botEditMessageSender.editMessage(userId, messageId, Messages.PROPERTY_TYPE_MENU_MSG.get(language));
+
+        } else if (data.equals(Messages.OFFICE_BTN.name())) {
             session.setPropertyCategory(PropertyCategory.OFFICE);
 
         } else if (data.equals(Messages.NON_RES_BTN.name())) {

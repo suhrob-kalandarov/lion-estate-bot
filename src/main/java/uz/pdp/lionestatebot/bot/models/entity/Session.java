@@ -50,6 +50,12 @@ public class Session extends Auditable {
 
     private String region;
 
+    private Integer floor;
+
+    private Integer room;
+
+    private String cost;
+
     @OneToMany(mappedBy = "session")
     private List<RequestProperty> requests;
 

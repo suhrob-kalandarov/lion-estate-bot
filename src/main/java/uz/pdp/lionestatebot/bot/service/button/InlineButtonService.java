@@ -118,6 +118,16 @@ public class InlineButtonService {
         );
     }
 
+    public InlineKeyboardMarkup roomCountBtns(Language language) {
+        var markup = new InlineKeyboardMarkup();
+        for (int i = 1; i < 10; i++) {
+            markup.addRow(new InlineKeyboardButton(i + "").callbackData("room_" + i));
+        }
+        return markup.addRow(
+                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData(Messages.BACK_BTN.name())
+        );
+    }
+
     public InlineKeyboardMarkup officeCostBtns(Language language) {
         return new InlineKeyboardMarkup(
                 new InlineKeyboardButton("50-100 K").callbackData("cost_50-100"),
