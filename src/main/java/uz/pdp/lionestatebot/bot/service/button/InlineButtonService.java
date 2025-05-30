@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class InlineButtonService {
 
-    public InlineKeyboardMarkup languageBtns(){
+    public InlineKeyboardMarkup languageBtns() {
         return new InlineKeyboardMarkup(
                 new InlineKeyboardButton("\uD83C\uDDFA\uD83C\uDDFFO‘zbek").callbackData("lang_uz"),
                 new InlineKeyboardButton("\uD83C\uDDF7\uD83C\uDDFAРусский").callbackData("lang_ru")
@@ -126,6 +126,15 @@ public class InlineButtonService {
         }
         return markup.addRow(
                 new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData(Messages.BACK_BTN.name())
+        );
+    }
+
+    public InlineKeyboardMarkup propertyTypeBtns(Language language) {
+        return new InlineKeyboardMarkup(
+                new InlineKeyboardButton(Messages.NEW_BUILDING_BTN.get(language)).callbackData(Messages.NEW_BUILDING_BTN.name()),
+                new InlineKeyboardButton(Messages.SECONDARY_MARKET_BTN.get(language)).callbackData(Messages.SECONDARY_MARKET_BTN.name()))
+                .addRow(
+                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_home_from_rent")
         );
     }
 

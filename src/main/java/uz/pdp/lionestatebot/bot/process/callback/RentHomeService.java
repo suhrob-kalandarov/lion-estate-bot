@@ -87,12 +87,12 @@ public class RentHomeService implements BiConsumer<CallbackQuery, Session> {
         } else if (data.startsWith("floor_")) {
             data = data.replace("floor_", "");
             session.setFloor(Integer.parseInt(data));
-            botEditMessageSender.editMessage(userId, messageId, Messages.ROOM_COUNT_MENU_MSG.get(language), inlineButtonService.floorBtns(language));
+            botEditMessageSender.editMessage(userId, messageId, Messages.ROOM_COUNT_MENU_MSG.get(language), inlineButtonService.roomCountBtns(language));
 
         } else if (data.startsWith("room_")) {
             data = data.replace("room_", "");
             session.setRoom(Integer.parseInt(data));
-            botEditMessageSender.editMessage(userId, messageId, Messages.PROPERTY_TYPE_MENU_MSG.get(language));
+            botEditMessageSender.editMessage(userId, messageId, Messages.PROPERTY_TYPE_MENU_MSG.get(language),inlineButtonService.propertyTypeBtns(language));
 
         } else if (data.equals(Messages.OFFICE_BTN.name())) {
             session.setPropertyCategory(PropertyCategory.OFFICE);
