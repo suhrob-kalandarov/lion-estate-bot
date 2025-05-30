@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import uz.pdp.lionestatebot.bot.models.entity.Session;
 import uz.pdp.lionestatebot.bot.models.enums.SessionState;
 import uz.pdp.lionestatebot.bot.process.callback.LanguageHomeService;
+import uz.pdp.lionestatebot.bot.process.callback.RentHomeService;
 import uz.pdp.lionestatebot.bot.process.callback.RollbackService;
 import uz.pdp.lionestatebot.bot.service.model.faces.SessionService;
 
@@ -18,6 +19,7 @@ public class CallbackHandler implements Consumer<CallbackQuery> {
     private final SessionService sessionService;
     private final LanguageHomeService languageHomeService;
     private final RollbackService rollbackService;
+    private final RentHomeService rentHomeService;
 
     @Override
     public void accept(CallbackQuery callbackQuery) {
@@ -27,6 +29,9 @@ public class CallbackHandler implements Consumer<CallbackQuery> {
 
         if (session.getState().equals(SessionState.LANG_MENU)) {
             languageHomeService.accept(callbackQuery, session);
+
+        } else if (session.getState().equals(SessionState.RENT_MENU)) {
+            rentHomeService.accept(callbackQuery, session);
 
         } else if (data.startsWith("back_to") && session.getState().equals(SessionState.ABOUT_US)) {
             rollbackService.accept(callbackQuery, session);

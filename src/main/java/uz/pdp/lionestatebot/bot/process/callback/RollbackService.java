@@ -36,9 +36,10 @@ public class RollbackService implements BiConsumer<CallbackQuery, Session> {
             session.setState(SessionState.HOME_MENU);
             sessionService.save(session);
 
-        } else if (data.equals("back_to_rent")) {
-
-
+        } else if (data.equals("back_to_home_from_rent")) {
+            botMessageSender.sendMarkupMessage(session.getUserId(), Messages.CHOOSE_MENU_MSG.get(session.getLanguage()), replyButtonService.homeBtns(session.getLanguage()));
+            session.setState(SessionState.HOME_MENU);
+            sessionService.save(session);
         } else {
 
         }

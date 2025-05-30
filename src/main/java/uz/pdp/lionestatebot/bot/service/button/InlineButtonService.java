@@ -32,7 +32,7 @@ public class InlineButtonService {
                 new InlineKeyboardButton(Messages.OFFICE_BTN.get(language)).callbackData(Messages.OFFICE_BTN.name()),
                 new InlineKeyboardButton(Messages.NON_RES_BTN.get(language)).callbackData(Messages.NON_RES_BTN.name())
         ).addRow(
-                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData(Messages.BACK_BTN.name())
+                new InlineKeyboardButton(Messages.BACK_BTN.get(language)).callbackData("back_to_home_from_rent")
         );
     }
 
@@ -67,7 +67,7 @@ public class InlineButtonService {
         for (int i = 0; i < regions.size(); i += 2) {
             InlineKeyboardButton btn1 = new InlineKeyboardButton(regions.get(i)).callbackData("region_" + regions.get(i));
             InlineKeyboardButton btn2 = (i + 1 < regions.size())
-                    ? new InlineKeyboardButton(regions.get(i + 1)).callbackData("region:" + regions.get(i + 1))
+                    ? new InlineKeyboardButton(regions.get(i + 1)).callbackData("region_" + regions.get(i + 1))
                     : null;
 
             if (btn2 != null) {

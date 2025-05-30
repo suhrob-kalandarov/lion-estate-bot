@@ -11,6 +11,7 @@ import uz.pdp.lionestatebot.bot.models.entity.Session;
 import uz.pdp.lionestatebot.bot.models.enums.SessionState;
 import uz.pdp.lionestatebot.bot.models.enums.entity.Language;
 import uz.pdp.lionestatebot.bot.process.callback.LanguageHomeService;
+import uz.pdp.lionestatebot.bot.process.callback.RentHomeService;
 import uz.pdp.lionestatebot.bot.service.button.InlineButtonService;
 import uz.pdp.lionestatebot.bot.service.button.ReplyButtonService;
 import uz.pdp.lionestatebot.bot.service.execute.BotEditMessageSender;
@@ -32,6 +33,7 @@ public class HomeService implements BiConsumer<Message, Session> {
     private final LanguageHomeService languageHomeService;
     private final BotEditMessageSender botEditMessageSender;
     private final BotMessageSender botMessageSender;
+    private final RentHomeService rentHomeService;
 
     @Override
     public void accept(Message message, Session session) {
@@ -65,12 +67,13 @@ public class HomeService implements BiConsumer<Message, Session> {
     }
 
     private void handleRentBtn(Session session, Language lang) {
-        botMessageSender.sendMarkupMessage(session.getUserId(),
+      /*  botMessageSender.sendMarkupMessage(session.getUserId(),
                Messages.TECHNICAL_WORKS_MSG.get(lang),
                 replyButtonService.homeBtns(lang)
-        );
-        /*session.setState(SessionState.RENT_MENU);
-        sessionService.save(session);*/
+        );*/
+        session.setState(SessionState.RENT_MENU);
+        rentHomeService.sendMenu(session);
+
     }
 
     private void handleSaleBtn(Session session, Language lang) {

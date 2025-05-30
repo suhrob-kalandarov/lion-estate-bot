@@ -10,9 +10,7 @@ import uz.pdp.lionestatebot.bot.models.entity.ext.Favorite;
 import uz.pdp.lionestatebot.bot.models.entity.ext.Rating;
 import uz.pdp.lionestatebot.bot.models.entity.ext.RequestProperty;
 import uz.pdp.lionestatebot.bot.models.enums.SessionState;
-import uz.pdp.lionestatebot.bot.models.enums.entity.Citizenship;
-import uz.pdp.lionestatebot.bot.models.enums.entity.Language;
-import uz.pdp.lionestatebot.bot.models.enums.entity.ProfileType;
+import uz.pdp.lionestatebot.bot.models.enums.entity.*;
 
 import java.util.List;
 
@@ -43,6 +41,14 @@ public class Session extends Auditable {
 
     @Enumerated(EnumType.STRING)
     private ProfileType profileType;
+
+    @Enumerated(EnumType.STRING)
+    private PropertyCategory propertyCategory;
+
+    @Enumerated(EnumType.STRING)
+    private Renovation renovation;
+
+    private String region;
 
     @OneToMany(mappedBy = "session")
     private List<RequestProperty> requests;
