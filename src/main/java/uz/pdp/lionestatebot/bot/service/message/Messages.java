@@ -142,7 +142,12 @@ public enum Messages implements LocalizedMessage {
 
 
     /// RENT
-    RENT_MENU_MSG("🏡 Iltimos, arenda turini tanlang:", "🏡 Пожалуйста, выберите тип аренды:", "🏡 Please select the type of rent:", "🏡 请选择租赁类型："),
+    RENT_MENU_MSG(
+            "🏡 Iltimos, arenda turini tanlang:",
+            "🏡 Пожалуйста, выберите тип аренды:",
+            "🏡 Please select the type of rent:",
+            "🏡 请选择租赁类型："
+    ),
     APARTMENT_BTN("🏠 Kvartira", "🏠 Квартира", "🏠 Apartment", "🏠 公寓"),
     OFFICE_BTN("🏢 Ofis", "🏢 Офис", "🏢 Office", "🏢 办公室"),
     NON_RES_BTN("🏢 No turar joy", "🏢 Нежилое помещение", "🏢 Non-residential", "🏢 非住宅"),
@@ -221,8 +226,8 @@ public enum Messages implements LocalizedMessage {
             "🏠 Great, now select the property type:",
             "🏠 好的，现在请选择房产类型："
     ),
-    NEW_BUILDING_BTN("🏗 New Building", "🏗 Новостройка", "🏗 Yangi bino", "🏗 新楼"),
-    SECONDARY_MARKET_BTN("🏚 Resale Property", "🏚 Вторичка", "🏚 Ikkilamchi uy", "🏚 二手房"),
+    NEW_BUILDING_BTN("\"\uD83C\uDFD7 Yangi bino", "🏗 Новостройка", "🏗 New Building", "🏗 新楼"),
+    SECONDARY_MARKET_BTN("🏚 Vtorichka", "🏚 Вторичка", "🏚 Resale Property", "🏚 二手房"),
 
 
     /// HOME
