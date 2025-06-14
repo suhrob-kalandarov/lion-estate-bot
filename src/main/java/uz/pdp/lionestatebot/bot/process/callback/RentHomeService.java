@@ -35,7 +35,6 @@ public class RentHomeService implements BiConsumer<CallbackQuery, Session> {
         Long userId = session.getUserId();
         Integer messageId = session.getMessageId();
 
-
         if (data.equals(Messages.APARTMENT_BTN.name())) {
             session.setPropertyCategory(PropertyCategory.APARTMENT);
             botEditMessageSender.editMessage(userId, messageId, Messages.PROFILE_MENU_MSG.get(language), inlineButtonService.apartmentBtns(language));
@@ -67,18 +66,22 @@ public class RentHomeService implements BiConsumer<CallbackQuery, Session> {
 
         } else if (data.equals(Messages.EURO_RE_BTN.name())) {
             session.setRenovation(Renovation.EURO);
+            sessionService.save(session);
             botEditMessageSender.editMessage(userId, messageId, Messages.BUDGET_MENU_MSG.get(language), inlineButtonService.costBtns(language));
 
         } else if (data.equals(Messages.MINIMALISM_RE_BTN.name())) {
             session.setRenovation(Renovation.MINIMALISM);
+            sessionService.save(session);
             botEditMessageSender.editMessage(userId, messageId, Messages.BUDGET_MENU_MSG.get(language), inlineButtonService.costBtns(language));
 
         } else if (data.equals(Messages.SIMPLE_RE_BTN.name())) {
             session.setRenovation(Renovation.SIMPLE);
+            sessionService.save(session);
             botEditMessageSender.editMessage(userId, messageId, Messages.BUDGET_MENU_MSG.get(language), inlineButtonService.costBtns(language));
 
         } else if (data.equals(Messages.HIGHTECH_RE_BTN.name())) {
             session.setRenovation(Renovation.HIGH_TECH);
+            sessionService.save(session);
             botEditMessageSender.editMessage(userId, messageId, Messages.BUDGET_MENU_MSG.get(language), inlineButtonService.costBtns(language));
 
         } else if (data.startsWith("cost_")) {
@@ -131,10 +134,12 @@ public class RentHomeService implements BiConsumer<CallbackQuery, Session> {
             session.setState(SessionState.HOME_MENU);
 
         } else if (data.equals(Messages.OFFICE_BTN.name())) {
-            session.setPropertyCategory(PropertyCategory.OFFICE);
+            botEditMessageSender.editMessage(userId, messageId, Messages.TECHNICAL_WORKS_MSG.get(language));
+            sendMenu(session);
 
         } else if (data.equals(Messages.NON_RES_BTN.name())) {
-
+            botEditMessageSender.editMessage(userId, messageId, Messages.TECHNICAL_WORKS_MSG.get(language));
+            sendMenu(session);
         }
         sessionService.save(session);
     }

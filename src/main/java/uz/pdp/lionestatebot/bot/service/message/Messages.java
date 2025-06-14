@@ -71,10 +71,10 @@ public enum Messages implements LocalizedMessage {
     ADD_AD_BTN("📢 E'lon qo'shish", "📢 Добавить объявление", "📢 Add ad", "📢 添加广告"),
     LANGUAGE_BTN("🌐 Tilni o'zgartirish", "🌐 Сменить язык", "🌐 Change language", "🌐 更改语言"),
     ADD_AD_MSG(
-            "📢 E'lon qo'shish uchun @Lion_estate761 bilan bog'laning",
-            "📢 Свяжитесь с @Lion_estate761",
-            "📢 Contact @Lion_estate761",
-            "📢 联系 @Lion_estate761"
+            "📢 E'lon qo'shish uchun @ bilan bog'laning",
+            "📢 Свяжитесь с @",
+            "📢 Contact @",
+            "📢 联系 @"
     ),
     ABOUT_US_INFO_MSG(
             """
@@ -242,7 +242,7 @@ public enum Messages implements LocalizedMessage {
     OLD_BUILDING_BTN(
             "🏚Vtorychka",
             "🏚 Вторичка",
-            "🏚 Resale (old) building",
+            "🏚 Old building",
             "🏚 二手房"
     ),
 
